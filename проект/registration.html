@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация в кофейне</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5e9dc 0%, #ffffff 100%);
+            min-height: 100vh;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #5d4037;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            margin-bottom: 5px;
+            border: 1px solid #d7ccc8;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #6d4c41;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #5d4037;
+        }
+        .error {
+            color: #d32f2f;
+            font-size: 0.9em;
+        }
+        h1 {
+            color: #5d4037;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Регистрация в кофейне</h1>
+    <form id="registrationForm">
+        <div class="form-group">
+            <label for="first_name">Имя:</label>
+            <input type="text" id="first_name" name="first_name" required>
+            <div class="error" id="first_name_error"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="last_name">Фамилия:</label>
+            <input type="text" id="last_name" name="last_name" required>
+            <div class="error" id="last_name_error"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="username">Никнейм:</label>
+            <input type="text" id="username" name="username" required>
+            <div class="error" id="username_error"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <div class="error" id="email_error"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+            <div class="error" id="password_error"></div>
+        </div>
+        
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Собираем данные формы
+            const formData = {
+                first_name: document.getElementById('first_name').value,
+                last_name: document.getElementById('last_name').value,
+                username: document.getElementById('username').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value
+            };
+            
+            // Создаем XML структуру
+            const xmlString = `<?xml version="1.0" encoding="UTF-8"?>
+<user>
+    <first_name>${formData.first_name}</first_name>
+    <last_name>${formData.last_name}</last_name>
+    <username>${formData.username}</username>
+    <email>${formData.email}</email>
+    <password>${formData.password}</password>
+</user>`;
+            
+            // Создаем и скачиваем XML файл
+            const filename = 'user_registration.xml';
+            const dataUri = 'data:application/xml;charset=utf-8,' + encodeURIComponent(xmlString);
+            
+            const link = document.createElement('a');
+            link.href = dataUri;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Возвращаемся на предыдущую страницу и закрываем текущую вкладку
+            setTimeout(() => {
+                window.history.back();
+                setTimeout(() => {
+                    window.close();
+                }, 100);
+            }, 3);
+        });
+    </script>
+</body>
+</html>

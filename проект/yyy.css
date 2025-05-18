@@ -1,0 +1,503 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "DM Sans", serif;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    background-image: url("background.png");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.wrapper .nav {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav .navimgtext {
+    margin-left: 100px;
+}
+
+.nav .navimgtext img {
+    position: relative;
+    margin-right: 10px;
+    z-index: 999;
+}
+
+.nav .navimgtext p {
+    display: inline-block;
+    position: absolute;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    top: 21px;
+    z-index: 999;
+}
+
+.transperentbackground {
+    position: absolute;
+    top: 0;
+    left: -250px;
+    width: 70%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .4);
+    transform: skewX(25deg);
+}
+
+.mainpage {
+    height: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.void {
+    width: 50%;
+    height: 100%;
+}
+
+.maintext {
+    width: 50%;
+    height: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.maintext h2 {
+    text-align: left;
+    font-family: "Inter", serif;
+    font-weight: 400;
+    margin-top: 30px;
+}
+
+.maintext h1 {
+    font-family: "Playfair Display", serif;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 96px;
+}
+
+.maintext h3 {
+    margin-bottom: 24px;
+    font-weight: 400;
+}
+
+.maintext  div {
+    width: 496px;
+    height: 3px;
+    z-index: 999;
+    background-color: white;
+}
+
+.pricepage {
+    overflow: hidden;
+    background-color: rgb(240,238,237);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+.pricepage  .firstones  div {
+    background-color: white;
+    font-family: "Inter", serif;
+    position: relative;
+    font-size: 18px;
+    color: #766F6B;
+    border-radius: 10px;
+    width: 263px;
+    height: 298px;
+    transition: transform .8s;
+}
+
+.pricepage  .firstones  div:hover {
+    transform: scale(1.1);
+}
+
+.firstones {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.pricepage .firstones  div  img {
+    width: 263px;
+    height: 206px;
+}
+
+.pricepage  .secondones div {
+    background-color: white;
+    border-radius: 10px;
+    font-family: "Inter", serif;
+    position: relative;
+    font-size: 18px;
+    color: #766F6B;
+    width: 263px;
+    height: 298px;
+    transition: transform .8s;
+}
+
+.secondones  div:hover {
+    transform: scale(1.1);
+}
+
+.pricepage  .firstones  div p {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.pricepage .firstones div .qrcode1 {
+    cursor: pointer;
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    right: 15px;
+    bottom: 20px;
+}
+
+.pricepage .firstones div .qrcode2 {
+    cursor: pointer;
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    right: 15px;
+    bottom: 20px;
+}
+.pricepage .firstones div .qrcode3 {
+    cursor: pointer;
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    right: 15px;
+    bottom: 20px;
+}
+
+.pricepage .firstones div .qrcode4 {
+    cursor: pointer;
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    right: 15px;
+    bottom: 20px;
+}
+
+.secondones {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.pricepage  .secondones  div img {
+    width: 263px;
+    height: 206px;
+}
+
+.pricepage  .secondones  div  p {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.pricepage .secondones div .qrcode5 {
+    cursor: pointer;
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    right: 15px;
+    bottom: 20px;
+}
+
+.pricepage .secondones div .qrcode6 {
+    cursor: pointer;
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    right: 15px;
+    bottom: 20px;
+}
+
+.pricepage .secondones div .qrcode7 {
+    cursor: pointer;
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    right: 15px;
+    bottom: 20px;
+}
+
+.pricepage .secondones div .qrcode8 {
+    cursor: pointer;
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    right: 15px;
+    bottom: 20px;
+}
+
+
+.productinfo.open .productinfocontent {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}
+.productinfo2.open .productinfocontent2 {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}
+.productinfo3.open .productinfocontent3 {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.productinfo4.open .productinfocontent4 {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}
+.productinfocontent {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(240,238,237);
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    transform: scale(0);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .5s, opacity .5s, transform .4s;
+}
+.productinfocontent2 {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(240,238,237);
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    transform: scale(0);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .5s, opacity .5s, transform .4s;
+}
+.productinfocontent3 {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(240,238,237);
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    transform: scale(0);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .5s, opacity .5s, transform .4s;
+}
+.productinfocontent4 {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(240,238,237);
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    transform: scale(0);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .5s, opacity .5s, transform .4s;
+}
+.productnav {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.productnav img {
+    width: 38px;
+    height: 38px;
+    position: relative;
+    margin-left: 100px;
+}
+
+.productnav p {
+    top: 25px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    color: #774A47;
+    font-family: "Inter", serif;
+    position: absolute;
+    display: inline-block;
+}
+
+.productnav div button {   
+    margin-right: 100px;
+    width: 191px;
+    height: 45px;
+    font-family: "Inter", serif;
+    font-size: 18px;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    border: none;
+}
+
+.productmaininfo {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 90%;
+}
+
+.buttonimg {
+    width: 50%;
+    height: 100%;
+}
+
+.buttonimg button {
+    margin-left: 100px;
+    margin-bottom: 20px;
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    overflow: hidden;
+    width: 52px;
+    height: 52px;
+    border-radius: 40px;
+    position: relative;
+}
+
+.buttonimg p {
+    display: inline-block;
+    position: absolute;
+    left: 160px;
+    top: 90px;
+}
+
+.buttonimg img {
+    margin-left: 100px;
+}
+
+.discriptiontocoffee {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.discriptiontocoffee .discriptionname {
+    margin-top: 80px;
+    font-size: 48px;
+    color: #1F1F22;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.discriptiontocoffee > p {
+    color: #614A48;
+    font-size: 48px;
+    font-weight: 600;
+    font-family: "Inter", serif;
+    margin-bottom: 200px;
+}
+
+.discriptiontocoffee img {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 200px;
+    left: 1100px;
+    cursor: pointer;
+} 
+
+.discriptiontocoffee .poloca {
+    width: 496px;
+    height: 3px;
+    background-color: #7D7772;
+    margin-bottom: 20px;
+}
+
+.discriptiontocoffee .coffeediscription {
+    font-size: 16px;
+    max-width: 75%;
+}
+footer{
+    background-color: #1F1F22;
+    color: aliceblue;
+    display: block;
+    text-align: center;
+    align-self: right;
+    width: 50%;
+    height: 50px;
+}
+
+.F1{
+    color: #774A47;
+    font-family: "Inter", serif;
+    position: relative;
+    width: 50%;
+    right: -250px;
+    bottom: -100px;
+    font-size: 20px;
+    
+    
+    
+}
+.C2{
+    color: #774A47;
+    font-family: "Inter", serif;
+    position: relative;
+    width: 50%;
+    right: -250px;
+    bottom: -100px;
+    font-size: 20px;
+   
+}
+.C3{
+    color: #774A47;
+    font-family: "Inter", serif;
+    position: relative;
+    width: 50%;
+    right: -250px;
+    bottom: -100px;
+    font-size: 20px;
+  
+}
+.A4{
+    color: #774A47;
+    font-family: "Inter", serif;
+    position: relative;
+    width: 50%;
+    right: -250px;
+    bottom: -100px;
+    font-size: 20px;
+   
+}
+
